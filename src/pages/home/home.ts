@@ -6,6 +6,7 @@ import { IvgInfoPage } from '../ivg-info/ivg-info';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import Questions from './questionFile';
+import Stat from '../../app/statistique';
 
 @Component({
 	selector: 'page-home',
@@ -37,7 +38,6 @@ export class HomePage {
 
 
 	constructor(private renderer: Renderer, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) { }
-
 	ngOnInit() {
 		var self = this;
 		this.activeLogoWrapper = true;
@@ -54,12 +54,6 @@ export class HomePage {
 		this.answer = [];
 		this.Questions = Questions;
 		console.log(this.Questions);
-
-		// type 1 = number
-		// type 2 = Oui non
-		// type 3 = oui non je ne sais pas
-		// type 4 = select
-		// type 5 = date
 
 	}
 
@@ -99,7 +93,13 @@ export class HomePage {
 		nextForm(question) {
 
 			console.log("before", question);
-
+			Stat.push({
+				id: question.id,
+				type: question.type,
+				title: "question",
+				timestamp: new Date()
+			});
+			console.log(Stat);
 			this.questionForm = question;
 			if (this.questionForm.type == "number")
 			{
@@ -292,15 +292,31 @@ export class HomePage {
 		{
 			if (answer == "yes")
 			{
+				
 				if (this.yes == false)
 				{
+					Stat.push({
+						id: 1,
+						type: "yes",
+						title: "question",
+						timestamp: new Date()
+					});
+					console.log(Stat);
 					this.no = false;
 					this.idn = false;
 					this.yes = true;
+
 				}
 			}
 			else if (answer == "no")
 			{
+				Stat.push({
+					id: 1,
+					type: "no",
+					title: "question",
+					timestamp: new Date()
+				});
+				console.log(Stat);
 				if (this.no == false)
 				{
 					this.yes = false;
@@ -312,6 +328,13 @@ export class HomePage {
 			{
 				if (this.idn == false)
 				{
+					Stat.push({
+						id: 1,
+						type: "idn",
+						title: "question",
+						timestamp: new Date()
+					});
+					console.log(Stat);
 					this.no = false;
 					this.yes = false;
 					this.idn = true;

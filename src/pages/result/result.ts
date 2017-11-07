@@ -221,50 +221,50 @@ export class ResultPage {
                 this.resultRisk += 2;
         }
         if (this.resultRisk >= 200)
-            this.riskAssessment = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3.";
+            this.riskAssessment = "D'après vos réponses vous présentez une grossesse à risque et ce serait bien d'être suivie dans une maternité de type 3.";
         else if (this.resultRisk >= 50)
-            this.riskAssessment = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3";
+            this.riskAssessment = "D'après vos réponses vous présentez une grossesse à risque mais qui ne necessite pas un suivi dans une maternité de type 3";
         else if (this.resultRisk >= 20)
-            this.riskAssessment = "D'apres vos réponses vous présentez une grossesse à risque.";
+            this.riskAssessment = "D'après vos réponses vous présentez une grossesse à risque.";
         else
-            this.riskAssessment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse.";
+            this.riskAssessment = "D'après vos réponses vous présentez une grossesse à bas risque, youpi !";
         console.log("debut risk");
         if (this.tableAnswer[3].answerUser == true)
             this.resultSlide.push(
             {
                 type: "positif",
-                title: "Félicitation vous êtes enceinte !"
+                title: "Félicitations vous êtes enceinte !"
             });
         if (this.tableAnswer[6].answerUser == 0 && this.tableAnswer[3].answerUser == true)
             this.resultSlide.push(
             {
                 type: "positif",
-                title:  "Félicitation vous allez avoir votre premier enfant"
+                title:  "Félicitations vous allez avoir votre premier enfant"
             });
 
         if (this.tableAnswer[0].answerUser < 42 && this.tableAnswer[0].answerUser >= 38)
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"A votre Age, vous présentez un risque élevé d'anomalie chromosomique foetale"
+                title:"A votre âge, vous présentez un risque d'anomalie chromosomique foetale qui n'est pas négligeable"
             });
         else if (this.tableAnswer[0].answerUser > 42)
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale"
+                title:"A votre âge, vous présentez un risque élevé d'anomalie chromosomique foetale"
             });
         if (this.tableAnswer[0].answerUser < 38)
             this.resultSlide.push(
             {
                 type: "positif",
-                title: "Vous avez le bon l'âge optimal pour faire un enfant"
+                title: "Vous avez l'âge optimal pour faire un enfant"
             });
         else
             this.resultSlide.push(
             {
                 type: "positif",
-                title: "Être plus âgée pour élever ses enfants est ausi un gage de maturité !"
+                title: "Être plus âgée pour élever ses enfants est aussi un gage de maturité !"
             });
 
 
@@ -290,13 +290,13 @@ export class ResultPage {
             this.resultSlide.push(
             {
                 type: "conseil",
-                title: "Arrêtez de fumer !"
+                title: "Ce serait tellement chouette pour votre bébé de vous arrêter ! faites vous aider !"
             });
         else if (this.tableAnswer[5].answerUser == true)
             this.resultSlide.push(
             {
                 type: "conseil",
-                title: "Arrêtez de fumer avant d'entammer une grossesse !"
+                title: "Profitez de votre projet de grossesse pour motiver à vous arrêter ! Faites vous aider ! Arrêtez de fumer avant débuter une grossesse !"
             });
 
 
@@ -305,7 +305,7 @@ export class ResultPage {
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse."});
+                title:"Vous avez eu un enfant de + de 4kg, ce qui peut vous placer dans un groupe à risque de développer un diabète de grossesse."});
         if (this.tableAnswer[8].answerUser == true && this.tableAnswer[13].answerUser == true)
             this.resultSlide.push(
             {
@@ -322,7 +322,7 @@ export class ResultPage {
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %"
+                title:"Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin et vous avez 9 chances sur 10 d’avoir un bébé de poids normal cette fois ci !"
             });
         if (this.tableAnswer[8].answerUser >= 3)
             this.resultSlide.push(
@@ -334,7 +334,7 @@ export class ResultPage {
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"Vous avez déjà effectué une IMG et vous pourriez avoir un risque de récidive"
+                title:"Vous avez déjà subi une IMG mais votre risque de récidive est faible"
             });
         if (this.tableAnswer[19].answerUser < 10 && this.tableAnswer[19].answerUser > 0)
             this.resultSlide.push(
@@ -364,14 +364,14 @@ export class ResultPage {
             this.resultSlide.push(
             {
                 type: "conseil",
-                title: "Vous devez être prise en charge par une équipe spécialisée pour le choix des antiépileptiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
+                title: "Votre grossesse pourrait déséquilibrer votre épilepsie, ce serait bien que vous soyez prise en charge par une équipe spécialisée pour le choix des antiépileptiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
 
         if (this.tableAnswer[25].answerUser2 == true)
             this.resultSlide.push(
             {
                 type: "conseil",
-                title:"Vous devez être prise en charge par une équipe spécialisée pour le choix des anticoagulent et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
+                title:"Votre grossesse pourrait déséquilibrer votre traitement, ce serait bien que vous soyez prise en charge par une équipe spécialisée pour le choix des anticoagulents et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
         if (this.tableAnswer[21].answerUser == true)
             this.resultSlide.push(
@@ -383,7 +383,7 @@ export class ResultPage {
             this.resultSlide.push(
             {
                 type: "conseil",
-                title:"Vous devez être prise en charge par une équipe spécialisée pour le choix des antihypertenseurs et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
+                title:"Votre grossesse pourrait déséquilibrer votre HTA donc ce serait bien d’être prise en charge par une équipe spécialisée pour le choix des antihypertenseurs et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
         if (this.tableAnswer[22].answerUser == true)
             this.resultSlide.push(
@@ -396,58 +396,58 @@ export class ResultPage {
             this.resultSlide.push(
             {
                 type: "conseil",
-                title: "Vous devez être prise en charge par une équipe spécialisée pour le choix des antidiabetiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
+                title: "Pendant la grossesse, votre diabète sera déséquilibré donc vous devez être prise en être prise en charge par une équipe spécialisée pour le choix des antidiabetiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
         if (this.IMC < 18.5)
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"Votre MAIGREUR"
+                title:"Vous êtes en sous poids"
             });
         else if (this.IMC > 35 && this.IMC < 40)
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"Votre obésité"
+                title:"Vous êtes en surpoids"
             });
 
         else if (this.IMC > 40)
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"Votre obésité massive"
+                title:"Vous êtes en surpoids"
             });
         if (this.IMC < 18.5)
             this.resultSlide.push(
             {
                 type: "conseil",
-                title:"Alimentez-vous correctement"
+                title:"Essayez de vous alimentez suffisamment"
             });
         else if (
             this.IMC > 40)
             this.resultSlide.push(
             {
                 type: "conseil",
-                title:"Vous devez être prise en charge dans un centre spécialisé."
+                title:"Ce serait bien d'être prise en charge dans un centre spécialisé auprès de professionnels qui en ont l’ habitude et l’expertise."
             });
 
         if (this.tableAnswer[29].answerUser > 10 && this.tableAnswer[29].answerUser <= 12)
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"Votre nombre d'heure de travail est élevé."
+                title:"Votre nombre d'heures de travail est élevé."
             });
         if (this.tableAnswer[29].answerUser > 12)
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"Votre nombre d'heure de travail est vraiment très élevé"
+                title:"Votre nombre d'heures de travail est vraiment très élevé"
             });
         if (this.tableAnswer[30].answerUser > 90)
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"Votre temps de trajet pour aller au travail est élevé"
+                title:"Votre temps de trajet pour aller travailler est élevé"
             });
         if (this.tableAnswer[30].answerUser == true)
             this.resultSlide.push(
@@ -472,43 +472,43 @@ export class ResultPage {
             this.resultSlide.push(
             {
                 type: "conseil",
-                title:"Essayer d'aménager vos heures de travail"
+                title:"Ce serait chouette d'aménager vos heures de travail"
             });
         if (this.tableAnswer[29].answerUser > 90)
             this.resultSlide.push(
             {
                 type: "conseil",
-                title:"Essayer d'aménager vos heures de présence au travail pour diminuer les temps de trajets"
+                title:"Ce serait chouette d'aménager vos heures de présence au travail pour diminuer les temps de trajets"
             });
         if (this.tableAnswer[29].answerUser == true)
             this.resultSlide.push(
             {
                 type: "conseil",
-                title:"Nous vous conseillons de discuter dès à présent avec votre employeur de la possibilité d'aménager vos conditions de travail. Vous risquez d'être en difficulté pendant votre grossesse si vous restez debout plus de 6 heures par jour"
+                title:"Ce serait chouette de discuter dès à présent avec votre employeur de la possibilité d'aménager vos conditions de travail. Vous risquez d'être en difficulté pendant votre grossesse si vous restez debout plus de 6 heures par jour et ce serait malin s'il acceptait ! Car qui ménage sa monture va loin"
             });
         if (this.tableAnswer[18].answerUser >= 3)
             this.resultSlide.push(
             {
                 type: "conseil",
-                title: "Effectuez un bilan de fausse couche à répétition et bénéficiez d'une prise en charge adaptée en fonction des résultats de ce bilan."
+                title: "Vos fausses à répétition vous angoissent certainement. Prenez RDV chez un spécialiste pour vous faire confirmer qu’elles sont accidentelles. Vous serez plus zen pour la suite "
             });
         if (this.tableAnswer.IMG == true)
             this.resultSlide.push(
             {
                 type: "conseil",
-                title:"Prenez rendez-vous pour une consultation spécialisée afin d'évaluer le risque de récidive de malformation foetale."
+                title:"title:&quot;Le risque de récidive d’une malformation fœtale est généralement très rare. Prenez rendez-vous pour une consultation spécialisée pour vous le faire confirmer. Vous serez plus zen évidemment ! "
             });
         if (this.tableAnswer[19].answerUser >= 10 && this.tableAnswer[1].answerUser == true)
             this.resultSlide.push(
             {
                 type: "conseil",
-                title:"Prenez rendez-vous dans un centre spécialisée pour vous aider à arrêter l'alcool"
+                title:"Profitez de votre grossesse annoncée pour vous motiver à stopper l’alcool ! Prenez rendez-vous dans un centre spécialisée pour vous aider"
             });
         if (this.tableAnswer[19].answerUser < 10 && this.tableAnswer[19].answerUser > 0 && this.tableAnswer[1].answerUser == true)
             this.resultSlide.push(
             {
                 type: "conseil",
-                title: "Il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!"
+                title: "Motivez-vous ! ca il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!"
             });
 
         this.answers = this.resultSlide.concat(this.psycho);
